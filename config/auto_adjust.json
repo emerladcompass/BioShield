@@ -1,0 +1,11 @@
+{
+  "auto_adjust_enabled": true,
+  "ph_target": 6.8,
+  "ph_tolerance": 0.2,
+  "moisture_target": 65,
+  "moisture_tolerance": 8,
+  "max_adjustments_per_hour": 6,
+  "adjustment_history": [],
+  "last_adjustment": "2026-01-12T15:15:00",
+  "aggressiveness": "HIGH"
+}

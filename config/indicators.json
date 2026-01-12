@@ -1,0 +1,17 @@
+{
+  "author_info": {
+    "name": "Samir Baladi",
+    "organization": "Emerlad Compass \ud83e\udded",
+    "email": "emerladcompass@gmail.com",
+    "orcid": "0009-0003-8903-0029",
+    "website": "emerladcompass.github.io/bioshield",
+    "github": "https://github.com/emerladcompass/BioShield",
+    "dashboard": "bioshield-b1.netlify.app",
+    "affiliation": "Interdisciplinary AI Researcher"
+  },
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-01-12T12:46:30.450367",
+    "based_on": "HydroNet Framework"
+  }
+}

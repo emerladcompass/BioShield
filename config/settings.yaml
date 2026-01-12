@@ -1,0 +1,20 @@
+# BioShield-B Configuration v1.0
+
+author: Samir Baladi
+organization: Emerlad Compass 🧭
+email: emerladcompass@gmail.com
+orcid: 0009-0003-8903-0029
+github: https://github.com/emerladcompass/BioShield
+dashboard: bioshield-b1.netlify.app
+affiliation: Interdisciplinary AI Researcher
+
+system:
+  name: "BioShield Agro-Immunity"
+  version: "1.0.0"
+  mode: "constitutive_immunity"
+  base_dir: "/sdcard/download/BioShield/B_Agro_Immunity"
+
+monitoring:
+  prediction_window: 8
+  update_frequency: "daily"
+  data_retention_days: 365

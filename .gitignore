@@ -1,0 +1,32 @@
+# Python environment files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# Sensitive data
+vault/
+*.key
+*.pem
+*.crt
+
+# Logs
+logs/*.log
+!logs/example.log
+
+# Temporary data
+data/raw/temp_*
+data/processed/temp_*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
