@@ -1,0 +1,260 @@
+[
+  {
+    "timestamp": "2026-01-12T14:46:46.539313",
+    "analysis": {
+      "timestamp": "2026-01-12T14:46:46.538744",
+      "ph": 6.95,
+      "moisture": 51,
+      "temperature": 19,
+      "actions_needed": [
+        "INCREASE_WATERING"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "WATER_ADJUSTMENT",
+        "action": "INCREASE_WATER_FLOW",
+        "amount": 28,
+        "description": "\u0632\u064a\u0627\u062f\u0629 \u0645\u0639\u062f\u0644 \u0627\u0644\u0631\u064a"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:46:53.111435",
+    "analysis": {
+      "timestamp": "2026-01-12T14:46:53.109649",
+      "ph": 7.45,
+      "moisture": 33,
+      "temperature": 21,
+      "actions_needed": [
+        "LOWER_PH",
+        "INCREASE_WATERING"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "PH_ADJUSTMENT",
+        "action": "ADD_ACIDIC_COMPOUND",
+        "amount": 32,
+        "description": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628 \u062d\u0645\u0636\u064a \u0644\u062e\u0641\u0636 pH"
+      },
+      {
+        "type": "WATER_ADJUSTMENT",
+        "action": "INCREASE_WATER_FLOW",
+        "amount": 50,
+        "description": "\u0632\u064a\u0627\u062f\u0629 \u0645\u0639\u062f\u0644 \u0627\u0644\u0631\u064a"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:09.093509",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:09.093250",
+      "ph": 6.68,
+      "moisture": 90,
+      "temperature": 24,
+      "actions_needed": [
+        "REDUCE_WATERING"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "WATER_ADJUSTMENT",
+        "action": "DECREASE_WATER_FLOW",
+        "amount": 50,
+        "description": "\u062a\u0642\u0644\u064a\u0644 \u0645\u0639\u062f\u0644 \u0627\u0644\u0631\u064a"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:10.600609",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:10.600474",
+      "ph": 6.4,
+      "moisture": 38,
+      "temperature": 17,
+      "actions_needed": [
+        "RAISE_PH",
+        "INCREASE_WATERING"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "PH_ADJUSTMENT",
+        "action": "ADD_ALKALINE_COMPOUND",
+        "amount": 19,
+        "description": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628 \u0642\u0644\u0648\u064a \u0644\u0631\u0641\u0639 pH"
+      },
+      {
+        "type": "WATER_ADJUSTMENT",
+        "action": "INCREASE_WATER_FLOW",
+        "amount": 50,
+        "description": "\u0632\u064a\u0627\u062f\u0629 \u0645\u0639\u062f\u0644 \u0627\u0644\u0631\u064a"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:12.608980",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:12.608684",
+      "ph": 6.84,
+      "moisture": 37,
+      "temperature": 20,
+      "actions_needed": [
+        "INCREASE_WATERING"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "WATER_ADJUSTMENT",
+        "action": "INCREASE_WATER_FLOW",
+        "amount": 50,
+        "description": "\u0632\u064a\u0627\u062f\u0629 \u0645\u0639\u062f\u0644 \u0627\u0644\u0631\u064a"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:14.122751",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:14.122580",
+      "ph": 6.26,
+      "moisture": 56,
+      "temperature": 24,
+      "actions_needed": [
+        "RAISE_PH"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "PH_ADJUSTMENT",
+        "action": "ADD_ALKALINE_COMPOUND",
+        "amount": 27,
+        "description": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628 \u0642\u0644\u0648\u064a \u0644\u0631\u0641\u0639 pH"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:15.629725",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:15.629369",
+      "ph": 5.55,
+      "moisture": 71,
+      "temperature": 17,
+      "actions_needed": [
+        "RAISE_PH"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "PH_ADJUSTMENT",
+        "action": "ADD_ALKALINE_COMPOUND",
+        "amount": 62,
+        "description": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628 \u0642\u0644\u0648\u064a \u0644\u0631\u0641\u0639 pH"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:17.138543",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:17.138359",
+      "ph": 6.46,
+      "moisture": 50,
+      "temperature": 26,
+      "actions_needed": [
+        "RAISE_PH",
+        "INCREASE_WATERING"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "PH_ADJUSTMENT",
+        "action": "ADD_ALKALINE_COMPOUND",
+        "amount": 16,
+        "description": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628 \u0642\u0644\u0648\u064a \u0644\u0631\u0641\u0639 pH"
+      },
+      {
+        "type": "WATER_ADJUSTMENT",
+        "action": "INCREASE_WATER_FLOW",
+        "amount": 30,
+        "description": "\u0632\u064a\u0627\u062f\u0629 \u0645\u0639\u062f\u0644 \u0627\u0644\u0631\u064a"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:19.153777",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:19.153480",
+      "ph": 6.46,
+      "moisture": 68,
+      "temperature": 18,
+      "actions_needed": [
+        "RAISE_PH"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "PH_ADJUSTMENT",
+        "action": "ADD_ALKALINE_COMPOUND",
+        "amount": 16,
+        "description": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628 \u0642\u0644\u0648\u064a \u0644\u0631\u0641\u0639 pH"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  },
+  {
+    "timestamp": "2026-01-12T14:55:20.662006",
+    "analysis": {
+      "timestamp": "2026-01-12T14:55:20.661417",
+      "ph": 7.46,
+      "moisture": 32,
+      "temperature": 26,
+      "actions_needed": [
+        "LOWER_PH",
+        "INCREASE_WATERING"
+      ],
+      "adjustments_made": [],
+      "status": "NEEDS_ADJUSTMENT"
+    },
+    "actions": [
+      {
+        "type": "PH_ADJUSTMENT",
+        "action": "ADD_ACIDIC_COMPOUND",
+        "amount": 33,
+        "description": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628 \u062d\u0645\u0636\u064a \u0644\u062e\u0641\u0636 pH"
+      },
+      {
+        "type": "WATER_ADJUSTMENT",
+        "action": "INCREASE_WATER_FLOW",
+        "amount": 50,
+        "description": "\u0632\u064a\u0627\u062f\u0629 \u0645\u0639\u062f\u0644 \u0627\u0644\u0631\u064a"
+      }
+    ],
+    "execution_status": "COMPLETED"
+  }
+]

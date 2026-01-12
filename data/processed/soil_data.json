@@ -1,0 +1,38 @@
+{
+  "sensor_data": {
+    "timestamp": "2026-01-12T13:14:23.823173",
+    "sensor_id": "SOIL-001",
+    "ph": 7.36,
+    "moisture": 30,
+    "temperature": 24,
+    "nutrients": {
+      "nitrogen": 41,
+      "phosphorus": 5,
+      "potassium": 21
+    },
+    "conductivity": 1.22,
+    "organic_matter": 7
+  },
+  "analysis": {
+    "timestamp": "2026-01-12T13:14:23.823261",
+    "sensor_id": "SOIL-001",
+    "status": "WARNING",
+    "alerts": [
+      "الرطوبة تحتاج تعديل",
+      "نقص في phosphorus"
+    ],
+    "scores": {
+      "ph": "OPTIMAL",
+      "moisture": "ACCEPTABLE",
+      "nutrients": {
+        "nitrogen": "NORMAL",
+        "phosphorus": "LOW",
+        "potassium": "NORMAL"
+      }
+    },
+    "recommendations": [
+      "إضافة سماد phosphorus"
+    ]
+  },
+  "processed_at": "2026-01-12T13:14:23.823313"
+}

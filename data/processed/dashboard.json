@@ -1,0 +1,29 @@
+{
+  "last_updated": "2026-01-12T14:06:54.920569",
+  "modules": {
+    "soil_monitor": {
+      "data": {
+        "timestamp": "2026-01-12T14:06:54.914739",
+        "sensor_id": "SOIL-001",
+        "status": "WARNING",
+        "alerts": [
+          "زيادة في potassium"
+        ],
+        "scores": {
+          "ph": "OPTIMAL",
+          "moisture": "OPTIMAL",
+          "nutrients": {
+            "nitrogen": "NORMAL",
+            "phosphorus": "NORMAL",
+            "potassium": "HIGH"
+          }
+        },
+        "recommendations": []
+      },
+      "timestamp": "2026-01-12T14:06:54.920658"
+    }
+  },
+  "system_status": "OPERATIONAL",
+  "alerts": [],
+  "performance": {}
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "time": 14,
+    "ph": 7.0,
+    "moisture": 55.0,
+    "status": "✅"
+  },
+  {
+    "time": 17,
+    "ph": 7.01,
+    "moisture": 54.9,
+    "status": "✅"
+  },
+  {
+    "time": 20,
+    "ph": 7.02,
+    "moisture": 54.8,
+    "status": "✅"
+  },
+  {
+    "time": 23,
+    "ph": 7.03,
+    "moisture": 54.7,
+    "status": "✅"
+  },
+  {
+    "time": 2,
+    "ph": 7.04,
+    "moisture": 54.6,
+    "status": "✅"
+  },
+  {
+    "time": 5,
+    "ph": 7.05,
+    "moisture": 54.5,
+    "status": "✅"
+  },
+  {
+    "time": 8,
+    "ph": 7.06,
+    "moisture": 54.4,
+    "status": "✅"
+  },
+  {
+    "time": 11,
+    "ph": 7.07,
+    "moisture": 54.3,
+    "status": "✅"
+  }
+]

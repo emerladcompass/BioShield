@@ -1,0 +1,18 @@
+{
+  "sensor_data": {
+    "timestamp": "2026-01-12T13:14:23.893637",
+    "sensor_id": "NUTRIENT-001",
+    "nitrogen": 44,
+    "phosphorus": 21,
+    "potassium": 51
+  },
+  "analysis": {
+    "timestamp": "2026-01-12T13:14:23.893697",
+    "sensor_id": "NUTRIENT-001",
+    "status": "NORMAL",
+    "alerts": [],
+    "scores": {},
+    "recommendations": []
+  },
+  "processed_at": "2026-01-12T13:14:23.893725"
+}

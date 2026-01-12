@@ -1,0 +1,25 @@
+{
+  "sensor_data": {
+    "timestamp": "2026-01-12T13:14:23.865326",
+    "sensor_id": "WATER-001",
+    "ph": 7.69,
+    "turbidity": 3.41,
+    "temperature": 35,
+    "dissolved_oxygen": 6.84
+  },
+  "analysis": {
+    "timestamp": "2026-01-12T13:14:23.865396",
+    "sensor_id": "WATER-001",
+    "status": "WARNING",
+    "alerts": [
+      "🚨 الماء عكر جدًا"
+    ],
+    "scores": {
+      "ph": "OPTIMAL"
+    },
+    "recommendations": [
+      "تنقية المياه"
+    ]
+  },
+  "processed_at": "2026-01-12T13:14:23.865413"
+}
