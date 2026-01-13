@@ -1,6 +1,5 @@
 
-
-BioShield v3.3.0 Wiki
+## BioShield v3.3.0 Wiki
 
 <div align="center">
 
@@ -296,3 +295,7 @@ Email: emerladcompass@gmail.com
 
 
 ---
+
+إذا أحببت، أستطيع الآن تجهيز نسخة PDF جاهزة للطباعة بنفس التنسيق لتكون ملف توثيق كامل مستقل.
+
+هل تريد أن أفعل ذلك؟
