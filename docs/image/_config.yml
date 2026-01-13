@@ -1,0 +1,28 @@
+title: "BioShield Documentation"
+description: "Intelligent Agro-Immunity Monitoring System Documentation"
+baseurl: "/BioShield"
+url: "https://emerladcompass.github.io"
+
+# Theme
+theme: jekyll-theme-minimal
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Navigation
+navbar-links:
+  Home: "/"
+  Getting Started: "getting-started"
+  API Reference: "api"
+  Modules: "modules"
+  Configuration: "configuration"
+  Downloads: "https://github.com/emerladcompass/BioShield/releases"
+
+# Exclude
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
