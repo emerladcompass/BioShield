@@ -154,5 +154,4 @@ GitHub: @emerladcompass
 
 BioShield v3.3.0 | Released January 2026 | MIT License
 "AI-powered soil monitoring. Real-time alerts. Predictive insights."
-�
-```
+
