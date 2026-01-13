@@ -1072,3 +1072,30 @@ BioShield is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue)](https://doi.org/10.5281/zenodo.18224754)
 
 </div>
+
+---
+<div align="center">
+# BioShield v3.3.0 - Complete Documentation
+
+![BioShield Banner](https://img.shields.io/badge/BioShield-v3.3.0-green?style=for-the-badge&logo=leaf)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square&logo=python)](https://www.python.org)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue?style=flat-square)](https://doi.org/10.5281/zenodo.18224754)
+
+</div>
+
+---
+---
+
+<div align="center">
+
+**BioShield v3.3.0** | Released January 2026 | MIT License
+
+*"AI-powered soil monitoring. Real-time alerts. Predictive insights."*
+
+[![GitHub](https://img.shields.io/badge/GitHub-BioShield-green?logo=github)](https://github.com/emerladcompass/BioShield)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue)](https://doi.org/10.5281/zenodo.18224754)
+
+</div>
+---
+
