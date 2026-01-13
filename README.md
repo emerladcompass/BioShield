@@ -64,7 +64,7 @@ It integrates **sensor readings, AI analytics, auto-correction, alerts, dashboar
 # Clone the repository
 git clone https://github.com/emerladcompass/BioShield.git
 cd BioShield
-
+```
 # Install dependencies
 pip install -r requirements.txt
 Running the System
@@ -93,6 +93,7 @@ Directory Manager – Organizes logs, reports, and data folders
 🏗️ Project Structure
 Copier le code
 
+```
 BioShield/
 ├── src/
 │   ├── main.py                 # CLI entry point
@@ -121,6 +122,7 @@ BioShield/
 ├── README.md
 ├── LICENSE
 └── requirements.txt
+```
 🌿 Applications
 Agricultural Management: Soil optimization and irrigation control
 Environmental Monitoring: Soil health and nutrient tracking
