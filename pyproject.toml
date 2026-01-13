@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bioshield"
-version = "3.3.5"
+version = "3.3.0"
 description = "BioShield-B: Agro-Systemic Immunity & Genetic Intelligence Framework for Sustainable Agriculture"
 readme = "README.md"
 authors = [
