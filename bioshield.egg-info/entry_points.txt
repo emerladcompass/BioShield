@@ -1,0 +1,3 @@
+[console_scripts]
+bioshield = bioshield_termux.main:main
+bs-adjust = bioshield_termux.run_auto_adjust:main

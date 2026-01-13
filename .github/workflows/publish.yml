@@ -1,0 +1,92 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # v1.0.0, v2.3.4, etc.
+  workflow_dispatch:  # للاختبار اليدوي
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Test import
+      run: |
+        python -c "import sys; sys.path.insert(0, 'src'); from main import main; print('✅ الاستيراد يعمل')"
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    environment: pypi
+    
+    permissions:
+      id-token: write  # مطلوب لـ OIDC
+      contents: read
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install build tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+
+    - name: Build package
+      run: |
+        python -m build
+        echo "📦 الملفات المنشأة:"
+        ls -lh dist/
+
+    - name: Verify package
+      run: |
+        twine check dist/*
+
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        verbose: true
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: bioshield-package
+        path: dist/
+        retention-days: 7
+
+    - name: Create GitHub Release
+      if: success()
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        generate_release_notes: true
+        files: |
+          dist/*.whl
+          dist/*.tar.gz
+        draft: false
+        prerelease: false

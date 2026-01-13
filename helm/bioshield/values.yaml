@@ -1,0 +1,31 @@
+# قيم افتراضية
+replicaCount: 3
+
+image:
+  repository: bioshield
+  tag: 3.3.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "250m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+config:
+  authorName: "Samir Baladi"
+  authorEmail: "emerladcompass@gmail.com"
+  version: "3.3.0"

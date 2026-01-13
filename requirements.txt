@@ -1,21 +1,12 @@
-# BioShield Agro-Immunity Requirements
-
-# Core
-numpy>=1.21.0
+# المتطلبات الأساسية (تعمل على Termux)
 pandas>=1.3.0
 scipy>=1.7.0
-
-# Network analysis
 networkx>=2.6.0
-
-# Configuration
 pyyaml>=5.4.0
-
-# Dates
 python-dateutil>=2.8.0
 
-# Testing (optional)
-pytest>=6.2.0
+# numpy مثبت بالفعل عبر pkg في Termux
+# numpy>=1.21.0
 
-# Note: In Termux, use:
-# pip install numpy pandas scipy networkx pyyaml
+# اختياري للاختبار
+# pytest>=6.2.0

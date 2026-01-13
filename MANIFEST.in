@@ -1,0 +1,13 @@
+include *.md
+include *.txt
+include *.json
+include *.sh
+include LICENSE
+recursive-include src *.py
+recursive-include src *.json
+recursive-include src *.yaml
+recursive-include src *.txt
+recursive-include docs *.md
+recursive-include data *.json
+recursive-include configs *.yaml
+recursive-include examples *.py

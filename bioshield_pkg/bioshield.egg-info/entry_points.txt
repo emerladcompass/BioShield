@@ -1,0 +1,3 @@
+[console_scripts]
+bioshield = bioshield.main:main
+bs-adjust = bioshield.run_auto_adjust:main

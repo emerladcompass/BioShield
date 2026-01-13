@@ -1,0 +1,10 @@
+apiVersion: v2
+name: bioshield
+description: BioShield Agro-Immunity System
+type: application
+version: 3.3.0
+appVersion: "3.3.0"
+maintainers:
+  - name: Samir Baladi
+    email: emerladcompass@gmail.com
+    url: https://github.com/emerladcompass

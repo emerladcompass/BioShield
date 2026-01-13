@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bioshield-deployment
+  labels:
+    app: bioshield
+    version: v3.3.0
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bioshield
+  template:
+    metadata:
+      labels:
+        app: bioshield
+        version: v3.3.0
+    spec:
+      containers:
+      - name: bioshield
+        image: bioshield:3.3.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: BIOSHIELD_ENV
+          value: "production"
+        - name: LOG_LEVEL
+          value: "INFO"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: config-volume
+          mountPath: /home/bioshield/config.json
+          subPath: config.json
+        - name: config-volume
+          mountPath: /home/bioshield/requirements.txt
+          subPath: requirements.txt
+        livenessProbe:
+          exec:
+            command:
+            - python
+            - -c
+            - "import sys; sys.path.insert(0, 'src'); from modules.soil_monitor import SoilMonitor; m = SoilMonitor(); data = m.simulate_sensor_reading(); print('OK')"
+          initialDelaySeconds: 30
+          periodSeconds: 60
+        readinessProbe:
+          exec:
+            command:
+            - python
+            - -c
+            - "import sys; sys.path.insert(0, 'src'); print('Ready')"
+          initialDelaySeconds: 5
+          periodSeconds: 10
+      volumes:
+      - name: config-volume
+        configMap:
+          name: bioshield-config

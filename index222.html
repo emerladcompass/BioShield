@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" class="h-full bg-slate-950">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B_Agro_Immunity v1.0 | Soil Health Terminal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
+body { font-family: 'JetBrains Mono', monospace; background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%); min-height:100vh; overflow-x:hidden; }
+.glass-panel { background: rgba(15,23,42,0.6); backdrop-filter: blur(12px); border:1px solid rgba(56,189,248,0.2); }
+.cyber-input { background: rgba(2,6,23,0.8); border:1px solid #1e293b; color:#38bdf8; transition:all 0.3s; }
+.cyber-input:focus { border-color:#38bdf8; box-shadow:0 0 10px rgba(56,189,248,0.3); outline:none; }
+.neon-text { text-shadow:0 0 8px rgba(56,189,248,0.5); }
+.scanline-down { width:100%; height:2px; background:linear-gradient(to right,transparent,#10b981,transparent); position:fixed; top:0; z-index:50; opacity:0.15; box-shadow:0 0 15px #10b981; animation:scanDown 8s linear infinite; }
+.scanline-up { width:100%; height:2px; background:linear-gradient(to right,transparent,#10b981,transparent); position:fixed; bottom:0; z-index:50; opacity:0.15; box-shadow:0 0 15px #10b981; animation:scanUp 8s linear infinite; }
+@keyframes scanDown { 0%{top:-10px;} 100%{top:100%;} }
+@keyframes scanUp { 0%{bottom:-10px;} 100%{bottom:100%;} }
+.progress-fill { transition: width 1s cubic-bezier(0.65,0,0.35,1); }
+</style>
+</head>
+<body class="p-4 md:p-8 text-slate-300">
+<div class="scanline-down pointer-events-none"></div>
+<div class="scanline-up pointer-events-none"></div>
+
+<div class="max-w-7xl mx-auto">
+<header class="mb-10 flex flex-col md:flex-row justify-between items-end border-b border-sky-900/50 pb-8">
+<div>
+<div class="flex items-center gap-2 mb-3 text-sky-500 text-[10px] font-bold tracking-[0.4em]">
+<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span></span>
+B_AGRO_IMMUNITY V1.0 // ACTIVE_SESSION
+</div>
+<h1 class="text-5xl font-extrabold text-white tracking-tighter neon-text">
+B_AGRO <span class="text-sky-500">/</span><span class="text-slate-700 text-4xl">Analyzer</span>
+</h1>
+<p class="text-slate-500 mt-2 font-medium italic">Soil & Crop Health Early Warning Terminal</p>
+</div>
+<div class="mt-6 md:mt-0 flex gap-6">
+<div class="text-right text-[9px] font-bold uppercase"><p class="text-slate-500 mb-1">Monitoring Frequency</p><p class="text-sky-400 bg-sky-500/10 px-2 py-1 rounded">Daily</p></div>
+<div class="text-right text-[9px] font-bold uppercase"><p class="text-slate-500 mb-1">Prediction Accuracy</p><p class="text-sky-400 bg-sky-500/10 px-2 py-1 rounded">0.912</p></div>
+</div>
+</header>
+
+<div class="grid lg:grid-cols-12 gap-8 items-start mb-12">
+<div class="lg:col-span-7">
+<div class="glass-panel p-8 rounded-lg border-l-4 border-sky-500">
+<h2 class="text-xs font-black mb-8 text-sky-500 uppercase tracking-[0.3em] flex items-center gap-2">
+<span class="w-2 h-2 bg-sky-500 animate-pulse"></span> Input_Soil_Matrix
+</h2>
+<form id="agro-form" class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="col-span-full opacity-50 text-[10px] font-bold border-b border-slate-800 pb-1 italic">01_SOIL_PARAMETERS</div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">pH Level</label><input type="number" id="ph" class="cyber-input w-full p-3 rounded text-sm" value="6.8" step="0.1"></div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Moisture %</label><input type="number" id="moisture" class="cyber-input w-full p-3 rounded text-sm" value="35" step="0.1"></div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Temperature °C</label><input type="number" id="temperature" class="cyber-input w-full p-3 rounded text-sm" value="22" step="0.1"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="col-span-full opacity-50 text-[10px] font-bold border-b border-slate-800 pb-1 italic">02_NUTRIENTS</div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Nitrogen</label><input type="number" id="nitrogen" class="cyber-input w-full p-3 rounded text-sm" value="50" step="0.1"></div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Phosphorus</label><input type="number" id="phosphorus" class="cyber-input w-full p-3 rounded text-sm" value="25" step="0.1"></div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Potassium</label><input type="number" id="potassium" class="cyber-input w-full p-3 rounded text-sm" value="40" step="0.1"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-full opacity-50 text-[10px] font-bold border-b border-slate-800 pb-1 italic">03_WATER_MANAGEMENT</div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Irrigation Level</label><input type="number" id="irrigation" class="cyber-input w-full p-3 rounded text-sm" value="70" step="0.1"></div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Drainage Efficiency</label><input type="number" id="drainage" class="cyber-input w-full p-3 rounded text-sm" value="85" step="0.1"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="col-span-full opacity-50 text-[10px] font-bold border-b border-slate-800 pb-1 italic">04_HUMAN_IMPACT</div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Fertilizer Use</label><input type="number" id="fertilizer" class="cyber-input w-full p-3 rounded text-sm" value="60" step="0.1"></div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Pesticide Use</label><input type="number" id="pesticide" class="cyber-input w-full p-3 rounded text-sm" value="20" step="0.1"></div>
+<div><label class="block text-[9px] font-bold text-slate-500 uppercase mb-2">Land Use Δ</label><input type="number" id="land_use" class="cyber-input w-full p-3 rounded text-sm" value="15" step="0.1"></div>
+</div>
+
+<button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-black py-5 rounded shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all uppercase tracking-[0.2em] text-xs">Execute Soil Analysis Sequence_</button>
+</form>
+</div>
+</div>
+
+<div id="results" class="lg:col-span-5 hidden space-y-6">
+<div class="glass-panel p-8 rounded-lg border-t-4 border-sky-500 bg-sky-950/10">
+<h3 class="text-[9px] font-black text-sky-500 uppercase tracking-widest mb-4">Soil Vulnerability Index (SVI)</h3>
+<div id="svi-val" class="text-7xl font-black text-white mb-6 tabular-nums neon-text">0.000</div>
+<div class="h-1 bg-slate-900 rounded-full mb-6"><div id="svi-bar" class="progress-fill h-full bg-sky-500 shadow-[0_0_15px_#0ea5e9]"></div></div>
+<div id="risk-status" class="text-lg font-bold p-3 bg-slate-950 rounded border border-slate-800 text-center uppercase"></div>
+<p id="warning-time" class="mt-4 text-[10px] font-mono text-slate-500 text-center"></p>
+</div>
+</div>
+
+</div>
+
+<script>
+document.getElementById('agro-form').addEventListener('submit', function(e){
+e.preventDefault();
+const p = id=>parseFloat(document.getElementById(id).value);
+
+const soilScore = Math.max(0, (p('ph')/7)*0.3 + (p('moisture')/100)*0.3 + (p('temperature')<30 ? 1 : 30/p('temperature'))*0.4);
+const nutrientScore = Math.max(0, (p('nitrogen')/100)*0.35 + (p('phosphorus')/50)*0.3 + (p('potassium')/80)*0.35);
+const waterScore = Math.max(0, (p('irrigation')/100)*0.5 + (p('drainage')/100)*0.5);
+const humanScore = Math.max(0, (p('fertilizer')/100)*0.3 + (p('pesticide')/50)*0.3 + (p('land_use')/20)*0.4);
+
+const svi = 1 - (soilScore + nutrientScore + waterScore + humanScore)/4;
+
+document.getElementById('results').classList.remove('hidden');
+document.getElementById('svi-val').innerText = svi.toFixed(3);
+setTimeout(()=>{document.getElementById('svi-bar').style.width=(svi*100)+'%';},50);
+
+const status = document.getElementById('risk-status');
+const warning = document.getElementById('warning-time');
+
+if(svi<0.4){ status.innerHTML="<span class='text-emerald-500'>[SYSTEM_STATUS: STABLE]</span>"; warning.innerHTML="Lead Time: > 12 Months"; }
+else if(svi<0.6){ status.innerHTML="<span class='text-yellow-500'>[SYSTEM_STATUS: ELEVATED]</span>"; warning.innerHTML="Lead Time: 6-12 Months"; }
+else{ status.innerHTML="<span class='text-red-500'>[SYSTEM_STATUS: CRITICAL]</span>"; warning.innerHTML="Lead Time: < 6 Months"; }
+});
+</script>
+</body>
+</html>

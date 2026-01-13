@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: bioshield-daily-analysis
+spec:
+  schedule: "0 6 * * *"  # كل يوم الساعة 6 صباحاً
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: bioshield-job
+            image: bioshield:3.3.0
+            command: ["python", "-m", "src.main"]
+            env:
+            - name: JOB_MODE
+              value: "daily"
+            resources:
+              requests:
+                memory: "512Mi"
+                cpu: "500m"
+              limits:
+                memory: "1Gi"
+                cpu: "1"
+          restartPolicy: OnFailure

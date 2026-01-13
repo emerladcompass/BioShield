@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: bioshield
+Version: 3.3.0
+Summary: Intelligent Soil Health Monitoring System for Termux
+Author: Samir Baladi
+Author-email: emerladcompass@gmail.com
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Android
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: pyyaml>=5.4.0
+Requires-Dist: python-dateutil>=2.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

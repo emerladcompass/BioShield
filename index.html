@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en" class="h-full bg-gradient-to-br from-slate-950 via-gray-900 to-emerald-950">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioShield v3.3.0 | Intelligent Soil Health System</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="theme-color" content="#0ea5e9">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
+:root {
+  --primary: #10b981;
+  --secondary: #3b82f6;
+  --accent: #8b5cf6;
+}
+body { 
+  font-family: 'Space Grotesk', sans-serif; 
+  min-height:100vh; 
+  overflow-x:hidden;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #064e3b 100%);
+  background-attachment: fixed;
+}
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.cyber-input-v3 {
+  background: rgba(6, 78, 59, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #e2e8f0;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+.cyber-input-v3:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  outline: none;
+  background: rgba(6, 78, 59, 0.4);
+}
+.neon-glow {
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.7), 0 0 20px rgba(16, 185, 129, 0.4);
+}
+.cyber-btn {
+  background: linear-gradient(90deg, #10b981 0%, #0ea5e9 100%);
+  color: white;
+  font-weight: 800;
+  letter-spacing: 2px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.cyber-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+.cyber-btn:active {
+  transform: translateY(-1px);
+}
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(16, 185, 129, 0.5);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.05); }
+}
+.scan-grid {
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.data-node {
+  position: relative;
+  border-left: 3px solid #10b981;
+  padding-left: 1rem;
+}
+.data-node::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+.gauge-container {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin: 0 auto;
+}
+.gauge-fill {
+  position: absolute;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #10b981, #0ea5e9, #8b5cf6);
+  transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.status-stable { background-color: #10b981; box-shadow: 0 0 10px #10b981; }
+.status-elevated { background-color: #f59e0b; box-shadow: 0 0 10px #f59e0b; }
+.status-critical { background-color: #ef4444; box-shadow: 0 0 10px #ef4444; }
+</style>
+</head>
+<body class="p-4 md:p-8 text-slate-200 scan-grid">
+<div class="max-w-7xl mx-auto">
+  
+  <!-- BioShield Logo Header -->
+  <div class="text-center mb-12 pt-6">
+    <div class="inline-block bg-gradient-to-r from-emerald-600 to-cyan-600 text-transparent bg-clip-text">
+      <h1 class="text-5xl md:text-6xl font-black mb-3 tracking-tighter">BioShield</h1>
+    </div>
+    <p class="text-xl text-emerald-300 font-medium uppercase tracking-[0.3em]">Intelligent Soil System</p>
+    <div class="mt-6 h-1 w-24 mx-auto bg-gradient-to-r from-transparent via-emerald-500 to-transparent"></div>
+  </div>
+  
+  <!-- Header Section -->
+  <header class="mb-12 flex flex-col md:flex-row justify-between items-center pb-8 border-b border-emerald-900/50 relative">
+    <div class="absolute top-0 left-0 w-24 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
+    <div class="flex-1">
+      <div class="flex items-center gap-3 mb-4 text-emerald-400 text-xs font-bold tracking-[0.3em]">
+        <div class="relative">
+          <span class="absolute inline-flex h-3 w-3 animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+        </div>
+        <span>B_AGRO_IMMUNITY // v3.3.0 // ONLINE</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-black text-white tracking-tight mb-2">
+        <span class="neon-glow">SOIL</span><span class="text-emerald-400">.</span><span class="neon-glow">HEALTH</span>
+      </h1>
+      <p class="text-slate-400 text-lg font-medium">Advanced Predictive Analytics Terminal</p>
+    </div>
+    <div class="mt-8 md:mt-0 flex flex-col items-end">
+      <div class="flex gap-4 mb-4">
+        <div class="text-right">
+          <p class="text-xs text-slate-400 mb-1">Model Accuracy</p>
+          <p class="text-emerald-400 font-black text-xl">94.7%</p>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-400 mb-1">Data Points</p>
+          <p class="text-cyan-400 font-black text-xl">2.4M</p>
+        </div>
+      </div>
+      <div class="text-xs text-slate-500 font-mono">Last Update: <span id="current-time" class="text-emerald-400"></span></div>
+    </div>
+  </header>
+
+  <div class="grid lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- Left Column: Input Form -->
+    <div class="lg:col-span-7">
+      <div class="glass-card p-8 rounded-2xl mb-8">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-black text-white flex items-center gap-3">
+            <i class="fas fa-seedling text-emerald-400"></i>
+            Soil Parameter Matrix
+          </h2>
+          <div class="text-xs font-bold text-emerald-400 bg-emerald-900/30 px-3 py-1 rounded-full">v3.3.0 AI Engine</div>
+        </div>
+        
+        <form id="agro-form" class="space-y-10">
+          <!-- Section 1: Soil Parameters -->
+          <div class="data-node">
+            <h3 class="text-sm font-bold text-emerald-300 mb-6 uppercase tracking-wider flex items-center">
+              <i class="fas fa-layer-group mr-2"></i> Primary Soil Parameters
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">pH Level</label>
+                <div class="relative">
+                  <input type="range" id="ph-range" min="3" max="10" step="0.1" value="6.8" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                  <input type="number" id="ph" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="6.8" step="0.1">
+                </div>
+                <div class="flex justify-between text-xs text-slate-500 mt-2">
+                  <span>Acidic</span>
+                  <span>Neutral</span>
+                  <span>Alkaline</span>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Moisture %</label>
+                <div class="relative">
+                  <input type="range" id="moisture-range" min="0" max="100" step="1" value="35" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                  <input type="number" id="moisture" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="35" step="0.1">
+                </div>
+                <div class="flex justify-between text-xs text-slate-500 mt-2">
+                  <span>Dry</span>
+                  <span>Optimal</span>
+                  <span>Saturated</span>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Temperature °C</label>
+                <div class="relative">
+                  <input type="range" id="temperature-range" min="-10" max="50" step="0.5" value="22" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                  <input type="number" id="temperature" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="22" step="0.1">
+                </div>
+                <div class="flex justify-between text-xs text-slate-500 mt-2">
+                  <span>Cold</span>
+                  <span>Optimal</span>
+                  <span>Hot</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Section 2: Nutrients -->
+          <div class="data-node">
+            <h3 class="text-sm font-bold text-emerald-300 mb-6 uppercase tracking-wider flex items-center">
+              <i class="fas fa-flask mr-2"></i> Nutrient Composition
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Nitrogen (N)</label>
+                <input type="number" id="nitrogen" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="50" step="0.1">
+                <div class="h-2 bg-slate-800 rounded-full mt-3">
+                  <div id="nitrogen-bar" class="h-full bg-cyan-500 rounded-full" style="width:50%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Phosphorus (P)</label>
+                <input type="number" id="phosphorus" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="25" step="0.1">
+                <div class="h-2 bg-slate-800 rounded-full mt-3">
+                  <div id="phosphorus-bar" class="h-full bg-violet-500 rounded-full" style="width:50%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Potassium (K)</label>
+                <input type="number" id="potassium" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="40" step="0.1">
+                <div class="h-2 bg-slate-800 rounded-full mt-3">
+                  <div id="potassium-bar" class="h-full bg-emerald-500 rounded-full" style="width:50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Section 3: Water Management -->
+          <div class="data-node">
+            <h3 class="text-sm font-bold text-emerald-300 mb-6 uppercase tracking-wider flex items-center">
+              <i class="fas fa-tint mr-2"></i> Water Management
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Irrigation Level</label>
+                <input type="number" id="irrigation" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="70" step="0.1">
+                <div class="flex items-center mt-3">
+                  <i class="fas fa-tint text-cyan-400 text-xs mr-2"></i>
+                  <div class="flex-1 h-2 bg-slate-800 rounded-full">
+                    <div id="irrigation-bar" class="h-full bg-cyan-400 rounded-full" style="width:70%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Drainage Efficiency</label>
+                <input type="number" id="drainage" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="85" step="0.1">
+                <div class="flex items-center mt-3">
+                  <i class="fas fa-filter text-emerald-400 text-xs mr-2"></i>
+                  <div class="flex-1 h-2 bg-slate-800 rounded-full">
+                    <div id="drainage-bar" class="h-full bg-emerald-400 rounded-full" style="width:85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Section 4: Human Impact -->
+          <div class="data-node">
+            <h3 class="text-sm font-bold text-emerald-300 mb-6 uppercase tracking-wider flex items-center">
+              <i class="fas fa-user-gear mr-2"></i> Human Impact Factors
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Fertilizer Use</label>
+                <input type="number" id="fertilizer" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="60" step="0.1">
+                <div class="h-2 bg-slate-800 rounded-full mt-3">
+                  <div id="fertilizer-bar" class="h-full bg-amber-500 rounded-full" style="width:60%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Pesticide Use</label>
+                <input type="number" id="pesticide" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="20" step="0.1">
+                <div class="h-2 bg-slate-800 rounded-full mt-3">
+                  <div id="pesticide-bar" class="h-full bg-rose-500 rounded-full" style="width:20%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">Land Use Δ</label>
+                <input type="number" id="land_use" class="cyber-input-v3 w-full p-4 rounded-lg text-center text-lg font-bold" value="15" step="0.1">
+                <div class="h-2 bg-slate-800 rounded-full mt-3">
+                  <div id="land_use-bar" class="h-full bg-slate-400 rounded-full" style="width:15%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <div class="pt-6">
+            <button type="submit" class="cyber-btn w-full p-5 rounded-xl text-lg font-black relative">
+              <span class="relative z-10">
+                <i class="fas fa-cogs mr-3"></i> EXECUTE SOIL ANALYSIS
+              </span>
+              <div class="pulse-ring"></div>
+            </button>
+            <p class="text-center text-xs text-slate-500 mt-4">
+              <i class="fas fa-circle-info mr-1"></i> v3.3.0 uses enhanced AI algorithms for improved prediction accuracy
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Right Column: Results Panel -->
+    <div id="results" class="lg:col-span-5 hidden space-y-8">
+      <!-- SVI Display -->
+      <div class="glass-card p-8 rounded-2xl">
+        <h3 class="text-lg font-black text-white mb-2 flex items-center">
+          <i class="fas fa-chart-line text-emerald-400 mr-3"></i>
+          Soil Vulnerability Index
+        </h3>
+        <p class="text-sm text-slate-400 mb-8">Real-time assessment based on multi-parameter analysis</p>
+        
+        <div class="flex items-end justify-between mb-6">
+          <div>
+            <div id="svi-val" class="text-7xl font-black text-white mb-2 tabular-nums">0.000</div>
+            <div class="text-xs text-slate-400 font-mono">Index Score (0.0 - 1.0)</div>
+          </div>
+          <div id="risk-indicator" class="text-right">
+            <div id="risk-status" class="text-2xl font-black uppercase mb-2">-</div>
+            <div id="warning-time" class="text-sm text-slate-400">Calculating...</div>
+          </div>
+        </div>
+        
+        <div class="gauge-container mb-10">
+          <div class="h-3 w-full bg-slate-800 rounded-full mb-2"></div>
+          <div id="svi-bar" class="gauge-fill rounded-full" style="width:0%"></div>
+          <div class="flex justify-between text-xs text-slate-500 mt-3">
+            <span>Low Risk</span>
+            <span>Moderate</span>
+            <span>High Risk</span>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="p-4 bg-slate-900/50 rounded-xl">
+            <div class="text-2xl font-black text-emerald-400" id="soil-score">0.00</div>
+            <div class="text-xs text-slate-400 mt-1">Soil Health</div>
+          </div>
+          <div class="p-4 bg-slate-900/50 rounded-xl">
+            <div class="text-2xl font-black text-cyan-400" id="nutrient-score">0.00</div>
+            <div class="text-xs text-slate-400 mt-1">Nutrients</div>
+          </div>
+          <div class="p-4 bg-slate-900/50 rounded-xl">
+            <div class="text-2xl font-black text-violet-400" id="water-score">0.00</div>
+            <div class="text-xs text-slate-400 mt-1">Water Mgmt</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Recommendations Panel -->
+      <div class="glass-card p-8 rounded-2xl">
+        <h3 class="text-lg font-black text-white mb-6 flex items-center">
+          <i class="fas fa-lightbulb text-amber-400 mr-3"></i>
+          AI Recommendations
+        </h3>
+        
+        <div id="recommendations" class="space-y-4">
+          <div class="p-4 bg-emerald-900/20 border-l-4 border-emerald-500 rounded-r-lg">
+            <div class="font-bold text-emerald-300 mb-1">Increase Nitrogen Levels</div>
+            <p class="text-sm text-slate-400">Consider applying organic nitrogen fertilizer to reach optimal levels (60-80 ppm).</p>
+          </div>
+          
+          <div class="p-4 bg-cyan-900/20 border-l-4 border-cyan-500 rounded-r-lg">
+            <div class="font-bold text-cyan-300 mb-1">Optimize Irrigation</div>
+            <p class="text-sm text-slate-400">Adjust irrigation schedule to maintain moisture between 40-60% for optimal root health.</p>
+          </div>
+          
+          <div class="p-4 bg-amber-900/20 border-l-4 border-amber-500 rounded-r-lg">
+            <div class="font-bold text-amber-300 mb-1">Monitor pH Regularly</div>
+            <p class="text-sm text-slate-400">pH level is optimal but requires monthly monitoring to prevent drift.</p>
+          </div>
+        </div>
+        
+        <div class="mt-8 pt-6 border-t border-slate-800">
+          <div class="flex items-center">
+            <i class="fas fa-robot text-slate-400 mr-3 text-xl"></i>
+            <div>
+              <div class="font-bold text-slate-300">v3.3.0 AI Engine</div>
+              <div class="text-xs text-slate-500">Analyzed 12 parameters across 4 categories</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Download Section (ظهر دائمًا قبل الفوتر) -->
+  <div class="mt-16 mb-12">
+    <div class="glass-card p-8 rounded-2xl text-center">
+      <h2 class="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+        <i class="fas fa-mobile-alt text-emerald-400"></i>
+        Download Android App
+      </h2>
+      <p class="text-slate-400 mb-6">
+        Get the full BioShield experience on your Android device with offline support
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="flex justify-center">
+          <div class="relative">
+            <img src="https://github.com/emerladcompass/BioShield/raw/main/docs/image/bioshield-v3-qr-apk.png" 
+                 alt="Download APK QR Code" 
+                 class="w-64 h-64 border-4 border-emerald-500/50 rounded-2xl p-2">
+            <div class="absolute -top-3 -right-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+              v3.3.0
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-left">
+          <h3 class="text-xl font-bold text-emerald-300 mb-4">App Features</h3>
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-400 mt-1 mr-3"></i>
+              <span><strong>Offline Analysis</strong> - Works without internet connection</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-400 mt-1 mr-3"></i>
+              <span><strong>Real-time Monitoring</strong> - Track soil health metrics</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-400 mt-1 mr-3"></i>
+              <span><strong>AI Recommendations</strong> - Personalized improvement plans</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-400 mt-1 mr-3"></i>
+              <span><strong>Data Export</strong> - CSV & PDF reports generation</span>
+            </li>
+          </ul>
+          
+          <div class="mt-8">
+            <a href="https://github.com/emerladcompass/BioShield/raw/main/docs/apk/BioShield.apk" 
+               download
+               class="inline-block bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white font-bold py-4 px-8 rounded-xl text-lg transition duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-full text-center">
+              <i class="fas fa-download mr-2"></i> Download APK (5 MB)
+            </a>
+            
+            <p class="text-sm text-slate-500 mt-4">
+              <i class="fas fa-android text-emerald-400 mr-1"></i>
+              Version 3.3.0 • Android 5.0+ • 5 MB • Updated: 2026-01-13
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="text-center py-12 border-t border-slate-800">
+    <div class="flex flex-wrap justify-center gap-8 mb-10 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+      <a href="https://pypi.org/project/bioshield/" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+        <i class="fab fa-python"></i> PyPI_Index
+      </a>
+      <a href="https://github.com/emerladcompass/Bioshield" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+        <i class="fab fa-github"></i> GitHub_Source
+      </a>
+      <a href="https://emerladcompass.github.io/BioShield/" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+        <i class="fas fa-book"></i> Documentation
+      </a>
+      <a href="https://bioshield-b1.netlify.app/" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+        <i class="fas fa-globe"></i> Mirror_Site
+      </a>
+    </div>
+    
+    <p class="text-[10px] text-slate-400 font-mono leading-loose mb-2">
+      BioShield v3.3.0 | Advanced Soil Health Prediction System
+    </p>
+    <p class="text-[9px] text-slate-600 font-mono tracking-wider">
+      Copyright © Emerald Compass - 2026 | All rights reserved.
+    </p>
+  </footer>
+</div>
+
+<script>
+// Update current time
+function updateTime() {
+  const now = new Date();
+  const dateStr = now.toISOString().split('T')[0];
+  const timeStr = now.toTimeString().split(' ')[0];
+  document.getElementById('current-time').textContent = `${dateStr} ${timeStr}`;
+}
+updateTime();
+setInterval(updateTime, 1000);
+
+// Sync range sliders with number inputs
+const syncInputs = (rangeId, numberId) => {
+  const range = document.getElementById(rangeId);
+  const number = document.getElementById(numberId);
+  
+  range.addEventListener('input', () => {
+    number.value = range.value;
+    updateProgressBar(numberId, number.value);
+  });
+  
+  number.addEventListener('input', () => {
+    range.value = number.value;
+    updateProgressBar(numberId, number.value);
+  });
+};
+
+// Update progress bars for inputs
+function updateProgressBar(inputId, value) {
+  const barId = `${inputId}-bar`;
+  const bar = document.getElementById(barId);
+  if (bar) {
+    let percentage = value;
+    
+    // Adjust percentage based on input type
+    if (inputId === 'ph') {
+      percentage = ((value - 3) / 7) * 100;
+    } else if (inputId === 'temperature') {
+      percentage = ((parseFloat(value) + 10) / 60) * 100;
+    }
+    
+    bar.style.width = `${Math.min(100, Math.max(0, percentage))}%`;
+  }
+}
+
+// Initialize sync for range inputs
+syncInputs('ph-range', 'ph');
+syncInputs('moisture-range', 'moisture');
+syncInputs('temperature-range', 'temperature');
+
+// Initialize progress bars
+document.querySelectorAll('input[type="number"]').forEach(input => {
+  updateProgressBar(input.id, input.value);
+  
+  input.addEventListener('input', (e) => {
+    updateProgressBar(e.target.id, e.target.value);
+  });
+});
+
+// Form submission handler
+document.getElementById('agro-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get input values
+  const p = id => parseFloat(document.getElementById(id).value);
+  
+  // Calculate scores (same algorithm as before but with v3.3.0 branding)
+  const soilScore = Math.max(0, (p('ph')/7)*0.3 + (p('moisture')/100)*0.3 + (p('temperature')<30 ? 1 : 30/p('temperature'))*0.4);
+  const nutrientScore = Math.max(0, (p('nitrogen')/100)*0.35 + (p('phosphorus')/50)*0.3 + (p('potassium')/80)*0.35);
+  const waterScore = Math.max(0, (p('irrigation')/100)*0.5 + (p('drainage')/100)*0.5);
+  const humanScore = Math.max(0, (p('fertilizer')/100)*0.3 + (p('pesticide')/50)*0.3 + (p('land_use')/20)*0.4);
+  
+  // Calculate SVI
+  const svi = 1 - (soilScore + nutrientScore + waterScore + humanScore) / 4;
+  
+  // Show results panel
+  document.getElementById('results').classList.remove('hidden');
+  
+  // Update SVI value with animation
+  const sviVal = document.getElementById('svi-val');
+  const sviBar = document.getElementById('svi-bar');
+  const riskStatus = document.getElementById('risk-status');
+  const warningTime = document.getElementById('warning-time');
+  
+  // Animate SVI value
+  let currentSVI = 0;
+  const targetSVI = svi;
+  const duration = 1500;
+  const startTime = Date.now();
+  
+  const animateSVI = () => {
+    const elapsed = Date.now() - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Easing function
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+    const easedProgress = easeOutCubic(progress);
+    
+    currentSVI = easedProgress * targetSVI;
+    
+    sviVal.textContent = currentSVI.toFixed(3);
+    sviBar.style.width = `${currentSVI * 100}%`;
+    
+    // Update component scores
+    document.getElementById('soil-score').textContent = soilScore.toFixed(2);
+    document.getElementById('nutrient-score').textContent = nutrientScore.toFixed(2);
+    document.getElementById('water-score').textContent = waterScore.toFixed(2);
+    
+    if (progress < 1) {
+      requestAnimationFrame(animateSVI);
+    } else {
+      // Set final risk status
+      let statusHTML, statusClass, warningText;
+      
+      if (svi < 0.4) {
+        statusHTML = '<span class="status-dot status-stable"></span>STABLE SYSTEM';
+        statusClass = 'text-emerald-400';
+        warningText = 'Lead Time: > 12 Months';
+      } else if (svi < 0.6) {
+        statusHTML = '<span class="status-dot status-elevated"></span>ELEVATED RISK';
+        statusClass = 'text-amber-400';
+        warningText = 'Lead Time: 6-12 Months';
+      } else {
+        statusHTML = '<span class="status-dot status-critical"></span>CRITICAL RISK';
+        statusClass = 'text-rose-400';
+        warningText = 'Lead Time: < 6 Months';
+      }
+      
+      riskStatus.innerHTML = statusHTML;
+      riskStatus.className = `text-2xl font-black uppercase mb-2 ${statusClass}`;
+      warningTime.textContent = warningText;
+    }
+  };
+  
+  animateSVI();
+});
+</script>
+
+  <script>
+    document.getElementById('hydro-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const params = {
+        precipitation: parseFloat(document.getElementById('precipitation').value),
+        evapotranspiration: parseFloat(document.getElementById('evapotranspiration').value),
+        pressure: parseFloat(document.getElementById('pressure').value),
+        streamflow: parseFloat(document.getElementById('streamflow').value),
+        lake_levels: parseFloat(document.getElementById('lake_levels').value),
+        reservoir: parseFloat(document.getElementById('reservoir').value),
+        groundwater: parseFloat(document.getElementById('groundwater').value),
+        quality: parseFloat(document.getElementById('quality').value),
+        soil_moisture: parseFloat(document.getElementById('soil_moisture').value),
+        extraction: parseFloat(document.getElementById('extraction').value),
+        land_use: parseFloat(document.getElementById('land_use').value)
+      };
+
+      const climaticScore = Math.max(0, (params.precipitation > 40 ? 1 : params.precipitation/40) * 0.4 + (params.evapotranspiration < 6 ? 1 : 6/params.evapotranspiration) * 0.3 + (Math.abs(params.pressure - 1013) < 20 ? 1 : 20/Math.abs(params.pressure - 1013)) * 0.3);
+      const surfaceWaterScore = Math.max(0, (params.streamflow > 80 ? 1 : params.streamflow/80) * 0.4 + (params.lake_levels > 90 ? 1 : params.lake_levels/90) * 0.3 + (params.reservoir/100) * 0.3);
+      const groundwaterScore = Math.max(0, (params.groundwater > 25 ? 1 : params.groundwater/25) * 0.6 + (params.quality/10) * 0.4);
+      const soilHumanScore = Math.max(0, (params.soil_moisture/100) * 0.3 + (params.extraction < 60 ? 1 : 60/params.extraction) * 0.4 + (params.land_use < 20 ? 1 : (100 - params.land_use)/80) * 0.3);
+
+      const svi = 1 - (climaticScore + surfaceWaterScore + groundwaterScore + soilHumanScore) / 4;
+
+      document.getElementById('results').classList.remove('hidden');
+      document.getElementById('svi-val').innerText = svi.toFixed(3);
+      
+      setTimeout(() => {
+        document.getElementById('svi-bar').style.width = (svi * 100) + '%';
+      }, 50);
+      
+      const status = document.getElementById('risk-status');
+      const warning = document.getElementById('warning-time');
+      
+      if(svi < 0.4) {
+        status.innerHTML = "<span class='text-emerald-500'>[ SYSTEM_STATUS: STABLE ]</span>";
+        warning.innerHTML = "LEAD_TIME: > 12 MONTHS";
+      } else if(svi < 0.6) {
+        status.innerHTML = "<span class='text-yellow-500'>[ SYSTEM_STATUS: ELEVATED ]</span>";
+        warning.innerHTML = "LEAD_TIME: 6-12 MONTHS";
+      } else {
+        status.innerHTML = "<span class='text-red-500'>[ SYSTEM_STATUS: CRITICAL ]</span>";
+        warning.innerHTML = "LEAD_TIME: < 6 MONTHS";
+      }
+
+      const domains = [
+        { name: 'Climatic Domain', score: 1 - climaticScore, color: 'bg-sky-500' },
+        { name: 'Surface Water', score: 1 - surfaceWaterScore, color: 'bg-cyan-500' },
+        { name: 'Subsurface/GW', score: 1 - groundwaterScore, color: 'bg-indigo-500' },
+        { name: 'Soil/Human Impact', score: 1 - soilHumanScore, color: 'bg-slate-400' }
+      ];
+
+      document.getElementById('domain-risks').innerHTML = domains.map(d => `
+        <div>
+          <div class="flex justify-between text-[9px] font-bold uppercase mb-2">
+            <span class="text-slate-500">${d.name}</span>
+            <span class="text-white">${(d.score * 100).toFixed(0)}% Vuln</span>
+          </div>
+          <div class="h-[2px] bg-slate-900 rounded-full">
+            <div class="progress-fill h-full ${d.color}" style="width: ${d.score * 100}%"></div>
+          </div>
+        </div>
+      `).join('');
+
+      const recommendations = document.getElementById('recommendations');
+      let recs = [];
+      if(svi >= 0.6) recs.push("> REDUCE_EXTRACTION_BY_30%");
+      if(params.precipitation < 30) recs.push("> EXECUTE_DROUGHT_CONTINGENCY_V1");
+      if(recs.length === 0) recs.push("> MONITORING_CONTINUES: NO_ACTION_REQUIRED");
+      recs.push(`> SCAN_WINDOW: T-MINUS 30 DAYS`);
+      
+      recommendations.innerHTML = recs.map(r => `<div>${r}</div>`).join('');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const example = {
+        precipitation: 45, evapotranspiration: 4.8, pressure: 1012,
+        streamflow: 85, lake_levels: 92, reservoir: 65,
+        groundwater: 28, quality: 7.5, soil_moisture: 35,
+        extraction: 55, land_use: 15
+      };
+      Object.keys(example).forEach(k => {
+        if(document.getElementById(k)) document.getElementById(k).value = example[k];
+      });
+    });
+  </script>
+</body>
+</html>
