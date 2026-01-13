@@ -499,22 +499,22 @@ Training & Workshops
 
 <div align="center">
 
-🧭 Connect & Collaborate
+## 🧭 Connect & Collaborate
 
-📧 Email: emerladcompass@gmail.com
-🔗 Website: emerladcompass.github.io/bioshield
-💼 GitHub: github.com/emerladcompass
-🔬 Research Portal: Emerlad Compass Research
+**📧 Email:** [emerladcompass@gmail.com](mailto:emerladcompass@gmail.com)  
+**🔗 Website:** [emerladcompass.github.io/bioshield](https://emerladcompass.github.io/bioshield)  
+**💼 GitHub:** [github.com/emerladcompass](https://github.com/emerladcompass)  
+**🔬 Research Portal:** [Emerlad Compass Research](https://emerladcompass.github.io)  
 
-🌱 Join our growing community of researchers and developers!
+**🌱 Join our growing community of researchers and developers!**
 
 ---
 
-BioShield-B Framework • Version 3.3.5 • © 2026 Emerlad Compass Research
-"Intelligent Soil Monitoring for Sustainable Agriculture"
+**BioShield-B Framework** • **Version 3.3.5** • **© 2026 Emerlad Compass Research**  
+*"Intelligent Soil Monitoring for Sustainable Agriculture"*
 
-https://img.shields.io/pypi/v/bioshield?style=for-the-badge
-https://img.shields.io/github/stars/emerladcompass/BioShield?style=for-the-badge
-https://img.shields.io/pypi/dm/bioshield?style=for-the-badge&color=green
+[![PyPI Version](https://img.shields.io/pypi/v/bioshield?style=for-the-badge)](https://pypi.org/project/bioshield/)
+[![GitHub Stars](https://img.shields.io/github/stars/emerladcompass/BioShield?style=for-the-badge)](https://github.com/emerladcompass/BioShield/stargazers)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/bioshield?style=for-the-badge&color=green)](https://pypi.org/project/bioshield/)
 
 </div>
