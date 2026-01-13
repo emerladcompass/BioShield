@@ -3,8 +3,10 @@
 
 <div align="center">
 
-Full-Feature Intelligent Soil Monitoring & Auto-Adjustment System
-AI-powered platform for real-time soil analysis, automatic correction, and predictive reporting
+![BioShield Logo](https://img.shields.io/badge/BioShield-v3.3.0_Wiki-228B22?style=for-the-badge&logo=python)
+
+**Full-Feature Intelligent Soil Monitoring & Auto-Adjustment System**  
+*AI-powered platform for real-time soil analysis, automatic correction, and predictive reporting*
 
 </div>
 ---
