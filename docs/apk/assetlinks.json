@@ -3,6 +3,6 @@
       "target": {
         "namespace": "android_app",
         "package_name": "app.netlify.bioshield_b1.twa",
-        "sha256_cert_fingerprints": ["EC:92:26:AF:CF:C5:5D:4B:37:D5:45:84:E1:3C:BA:89:07:57:B1:4A:A1:7A:B5:77:B5:DE:B9:C7:0B:45:20:12"]
+        "sha256_cert_fingerprints": ["6D:63:13:FD:54:08:D4:16:39:2F:58:42:4A:B4:98:56:EF:00:E7:BE:9B:A4:BC:4E:39:E9:26:F8:D8:F9:DC:81"]
       }
     }]
