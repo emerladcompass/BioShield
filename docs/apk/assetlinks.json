@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.netlify.bioshield_b1.twa",
+        "sha256_cert_fingerprints": ["EC:92:26:AF:CF:C5:5D:4B:37:D5:45:84:E1:3C:BA:89:07:57:B1:4A:A1:7A:B5:77:B5:DE:B9:C7:0B:45:20:12"]
+      }
+    }]
