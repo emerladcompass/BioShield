@@ -20,11 +20,6 @@ navbar-links:
   Configuration: "configuration"
   Downloads: "https://github.com/emerladcompass/BioShield/releases"
 
-# Plugins
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
 # Exclude
 exclude:
   - README.md
