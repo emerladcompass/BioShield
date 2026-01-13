@@ -1,41 +1,33 @@
 title: "BioShield Documentation"
-description: "Complete documentation for BioShield Agro-Immunity System"
+description: "Intelligent Agro-Immunity Monitoring System Documentation"
 baseurl: "/BioShield"
 url: "https://emerladcompass.github.io"
-github_username: emerladcompass
+
+# Theme
+theme: jekyll-theme-minimal
 
 # Build settings
 markdown: kramdown
-theme: just-the-docs
+highlighter: rouge
+permalink: pretty
+
+# Navigation
+navbar-links:
+  Home: "/"
+  Getting Started: "getting-started"
+  API Reference: "api"
+  Modules: "modules"
+  Configuration: "configuration"
+  Downloads: "https://github.com/emerladcompass/BioShield/releases"
+
+# Plugins
 plugins:
-  - jekyll-feed
+  - jekyll-sitemap
   - jekyll-seo-tag
 
-# Just the Docs theme settings
-just_the_docs:
-  # Main navigation
-  nav_fold: true
-  nav_external_links: true
-  
-  # Search
-  search_enabled: true
-  search.heading_level: 2
-  search.preview_words: 20
-  
-  # Aux links
-  aux_links:
-    "View on GitHub":
-      - "//github.com/emerladcompass/BioShield"
-  
-  # Footer
-  footer_content: "Copyright &copy; 2026 Emerlad Compass. Distributed under MIT License."
-
-# Exclude from processing
+# Exclude
 exclude:
+  - README.md
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - node_modules/
