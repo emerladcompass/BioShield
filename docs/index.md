@@ -1074,6 +1074,5 @@ BioShield is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 Copyright © 2026 Samir Baladi | MIT License
 
-[⬆ Back to Top](#bioshield-v3.3.0-documentation)
 
 ---
