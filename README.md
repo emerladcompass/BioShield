@@ -3,6 +3,7 @@
 <div align="center">
 
 ![BioShield Logo](https://img.shields.io/badge/BioShield-Intelligent_Soil_System-228B22?style=for-the-badge&logo=python)
+![BioShield Logo](https://img.shields.io/badge/BioShield-v3.3.0_Wiki-228B22?style=for-the-badge&logo=python)
 
 <!-- Version and Status -->
 [![Version](https://img.shields.io/badge/version-3.3.0-blue?style=flat-square)]()
