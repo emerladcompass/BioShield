@@ -1054,6 +1054,8 @@ BioShield is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
+---
+
 ## 🙏 Acknowledgments
 
 - Emerlad Compass team
@@ -1072,7 +1074,6 @@ BioShield is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue)](https://doi.org/10.5281/zenodo.18224754)
 
 </div>
-
 ---
 
 **HydroNet v1.0.0** | Released January 2026
