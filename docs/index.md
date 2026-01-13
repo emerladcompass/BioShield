@@ -1066,13 +1066,11 @@ BioShield is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
----
-
 **BioShield v3.3.0** | Released January 2026 | MIT License
 
 *"AI-powered soil monitoring. Real-time alerts. Predictive insights."*
 
 Copyright © 2026 Samir Baladi | MIT License
 
-
+</div>
 ---
