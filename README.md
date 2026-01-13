@@ -1,4 +1,5 @@
- BioShield v3.3.5
+
+## BioShield v3.3.5
 
 <div align="center">
 
@@ -12,7 +13,7 @@ https://img.shields.io/pypi/v/bioshield?style=flat-square&color=blue
 https://img.shields.io/pypi/dm/bioshield?style=flat-square&color=green
 https://img.shields.io/badge/python-3.8+-blue?style=flat-square&logo=python&logoColor=white
 https://img.shields.io/badge/license-MIT-green?style=flat-square
-https://img.shields.io/badge/status-production-ready-brightgreen?style=flat-square
+https://img.shields.io/badge/status-production--ready-brightgreen?style=flat-square
 
 <!-- DOI and Citation -->
 
@@ -247,3 +248,5 @@ PyPI: bioshield
 BioShield v3.3.5 | Released January 2026 | MIT License
 "AI-powered soil monitoring. Real-time alerts. Predictive insights."
 Now available on PyPI: pip install bioshield 🚀
+
+---
