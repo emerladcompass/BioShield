@@ -1,69 +1,62 @@
 
-## BioShield v3.3.5
+# BioShield v3.3.5
 
 <div align="center">
 
-https://img.shields.io/badge/BioShield-Intelligent_Soil_System-228B22?style=for-the-badge&logo=python
-https://img.shields.io/badge/BioShield-v3.3.5_Wiki-228B22?style=for-the-badge&logo=python
+![BioShield Logo](https://img.shields.io/badge/BioShield-Intelligent_Soil_System-228B22?style=for-the-badge&logo=python)
+![BioShield Version](https://img.shields.io/badge/BioShield-v3.3.5_Wiki-228B22?style=for-the-badge&logo=python)
 
-<!-- Version and Status -->
+![Version](https://img.shields.io/badge/version-3.3.5-blue?style=flat-square)
+![PyPI Version](https://img.shields.io/pypi/v/bioshield?style=flat-square&color=blue)
+![PyPI Downloads](https://img.shields.io/pypi/dm/bioshield?style=flat-square&color=green)
+![Python](https://img.shields.io/badge/python-3.8+-blue?style=flat-square&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/status-production--ready-brightgreen?style=flat-square)
 
-https://img.shields.io/badge/version-3.3.5-blue?style=flat-square
-https://img.shields.io/pypi/v/bioshield?style=flat-square&color=blue
-https://img.shields.io/pypi/dm/bioshield?style=flat-square&color=green
-https://img.shields.io/badge/python-3.8+-blue?style=flat-square&logo=python&logoColor=white
-https://img.shields.io/badge/license-MIT-green?style=flat-square
-https://img.shields.io/badge/status-production--ready-brightgreen?style=flat-square
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18224754.svg)](https://doi.org/10.5281/zenodo.18224754)
 
-<!-- DOI and Citation -->
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=flat-square&logo=github)](https://github.com/emerladcompass/BioShield)
 
-https://zenodo.org/badge/DOI/10.5281/zenodo.18224754.svg
+[![Documentation](https://img.shields.io/badge/docs-online-success?style=flat-square&logo=readthedocs)](https://emerladcompass.github.io/BioShield/)
 
-<!-- Repository Links -->
+**Intelligent Soil Monitoring & Auto-Adjustment System**  
+*AI-powered platform for real-time soil analysis, automatic correction, and predictive reporting*
 
-https://img.shields.io/badge/GitHub-Repository-black?style=flat-square&logo=github
-
-<!-- Documentation -->
-
-https://img.shields.io/badge/docs-online-success?style=flat-square&logo=readthedocs
-
-Intelligent Soil Monitoring & Auto-Adjustment System
-AI-powered platform for real-time soil analysis, automatic correction, and predictive reporting
-
-📖 Documentation • 
-🚀 Quick Start • 
-💻 Installation • 
-📊 Features • 
-📦 PyPI Package • 
-📚 Citation
+[📖 Documentation](https://emerladcompass.github.io/BioShield/) • 
+[🚀 Quick Start](#-quick-start) • 
+[💻 Installation](#-installation) • 
+[📊 Features](#-features) • 
+[📦 PyPI Package](#-pypi-package) • 
+[📚 Citation](#-how-to-cite)
 
 </div>
 
 ---
 
-🌱 Overview
+## 🌱 Overview
 
-BioShield v3.3.5 is a full-featured soil monitoring and auto-adjustment system designed for Termux and Linux.
-It integrates sensor readings, AI analytics, auto-correction, alerts, dashboards, and reporting into a modular architecture ready for production and research deployment.
+**BioShield v3.3.5** is a full-featured soil monitoring and auto-adjustment system designed for **Termux and Linux**.  
+It integrates **sensor readings, AI analytics, auto-correction, alerts, dashboards, and reporting** into a **modular architecture** ready for production and research deployment.
 
-🎯 Key Highlights
+### 🎯 Key Highlights
 
-Feature BioShield v3.3.5 Previous Versions Improvement
-Sensors Monitored pH, moisture, temperature, nutrients pH, moisture +2 parameters
-AI Auto-Adjustment Yes, real-time Partial / manual Full automation
-Analytics Predictive health scoring Basic trends +Advanced predictive models
-Alerts Real-time notifications Manual checks Immediate alerts
-Dashboard Live interactive dashboard None Full visual interface
-Reports Daily/weekly/summary Partial Complete automated reporting
-PyPI Package ✅ Available ❌ Not available One-command installation
+| Feature | BioShield v3.3.5 | Previous Versions | Improvement |
+|---------|-----------------|-----------------|-------------|
+| **Sensors Monitored** | pH, moisture, temperature, nutrients | pH, moisture | +2 parameters |
+| **AI Auto-Adjustment** | Yes, real-time | Partial / manual | Full automation |
+| **Analytics** | Predictive health scoring | Basic trends | +Advanced predictive models |
+| **Alerts** | Real-time notifications | Manual checks | Immediate alerts |
+| **Dashboard** | Live interactive dashboard | None | Full visual interface |
+| **Reports** | Daily/weekly/summary | Partial | Complete automated reporting |
+| **PyPI Package** | ✅ Available | ❌ Not available | One-command installation |
 
 ---
 
-📦 PyPI Package
+## 📦 PyPI Package
 
-BioShield is now available on PyPI! 🎉
+**BioShield is now available on PyPI!** 🎉
 
-Installation via PyPI (Recommended)
+### Installation via PyPI (Recommended)
 
 ```bash
 # Install latest version
@@ -248,5 +241,3 @@ PyPI: bioshield
 BioShield v3.3.5 | Released January 2026 | MIT License
 "AI-powered soil monitoring. Real-time alerts. Predictive insights."
 Now available on PyPI: pip install bioshield 🚀
-
----
