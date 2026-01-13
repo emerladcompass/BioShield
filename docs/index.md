@@ -1062,40 +1062,28 @@ BioShield is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-<div align="center">
-
-**BioShield v3.3.0** | Released January 2026 | MIT License
-
-*"AI-powered soil monitoring. Real-time alerts. Predictive insights."*
-
-[![GitHub](https://img.shields.io/badge/GitHub-BioShield-green?logo=github)](https://github.com/emerladcompass/BioShield)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue)](https://doi.org/10.5281/zenodo.18224754)
-
-</div>
-
----
-<div align="center">
-# BioShield v3.3.0 - Complete Documentation
-
-![BioShield Banner](https://img.shields.io/badge/BioShield-v3.3.0-green?style=for-the-badge&logo=leaf)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square&logo=python)](https://www.python.org)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue?style=flat-square)](https://doi.org/10.5281/zenodo.18224754)
-
-</div>
-
----
 ---
 
-<div align="center">
+**Made for Water Security Worldwide** 🌍💧
 
-**BioShield v3.3.0** | Released January 2026 | MIT License
+### Twelve Indicators. One Network View. Early Warning.
 
-*"AI-powered soil monitoring. Real-time alerts. Predictive insights."*
+**From data to decision.**
 
-[![GitHub](https://img.shields.io/badge/GitHub-BioShield-green?logo=github)](https://github.com/emerladcompass/BioShield)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue)](https://doi.org/10.5281/zenodo.18224754)
+If HydroNet helps your research or water management:
+- ⭐ Star this repository
+- 📄 Cite our paper
+- 🤝 Contribute to the project
+- 💬 Share with colleagues
 
-</div>
 ---
 
+**HydroNet v1.0.0** | Released January 2026
+
+*"Where domains converge • Where networks reveal • Where water is saved"*
+
+Copyright © 2026 Samir Baladi | MIT License
+
+[⬆ Back to Top](#hydronet-v10-documentation)
+
+---
