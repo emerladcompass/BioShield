@@ -1062,19 +1062,16 @@ BioShield is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
----
+<div align="center">
 
-**Made for Water Security Worldwide** 🌍💧
+**BioShield v3.3.0** | Released January 2026 | MIT License
 
-### Twelve Indicators. One Network View. Early Warning.
+*"AI-powered soil monitoring. Real-time alerts. Predictive insights."*
 
-**From data to decision.**
+[![GitHub](https://img.shields.io/badge/GitHub-BioShield-green?logo=github)](https://github.com/emerladcompass/BioShield)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18224754-blue)](https://doi.org/10.5281/zenodo.18224754)
 
-If HydroNet helps your research or water management:
-- ⭐ Star this repository
-- 📄 Cite our paper
-- 🤝 Contribute to the project
-- 💬 Share with colleagues
+</div>
 
 ---
 
