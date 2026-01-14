@@ -9,7 +9,7 @@
 
 ![BioShield-B](https://img.shields.io/badge/BioShield-B-Agro_Systemic_Immunity-4CAF50?style=for-the-badge&logo=github)
 ![BioShield](https://img.shields.io/badge/BioShield-Genetic_Integrity-4CAF50?style=for-the-badge&logo=dna)
-![Version](https://img.shields.io/badge/version-3.3.5-blue?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)
 ![PyPI Version](https://img.shields.io/pypi/v/bioshield?style=flat-square&color=blue)
 ![PyPI Downloads](https://img.shields.io/pypi/dm/bioshield?style=flat-square&color=green)
 ![Python](https://img.shields.io/badge/python-3.8+-blue?style=flat-square&logo=python&logoColor=white)
