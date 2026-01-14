@@ -34,11 +34,7 @@ jobs:
   publish:
     needs: test
     runs-on: ubuntu-latest
-    
-    
     permissions:
-  id-token: write
-  contents: read
       id-token: write  # مطلوب لـ OIDC
       contents: read
 
