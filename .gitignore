@@ -30,3 +30,6 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+upload_*.py
+*token*
+*secret*
