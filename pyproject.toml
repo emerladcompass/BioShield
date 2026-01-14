@@ -5,24 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "bioshield"
 version = "1.0.0"
-description = "BioShield: Intelligent Soil Monitoring & Auto-Adjustment System"
-readme = "README.md"
+description = "BioShield Soil Monitoring System"
 authors = [
     {name = "Samir Baladi", email = "emerladcompass@gmail.com"}
 ]
 license = {text = "MIT"}
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.8",
-    "Operating System :: OS Independent"
-]
-dependencies = [
-    "numpy>=1.21.0",
-    "pandas>=1.3.0",
-    "scikit-learn>=1.0.0"
-]
-
-[project.urls]
-Homepage = "https://github.com/emerladcompass/BioShield"
