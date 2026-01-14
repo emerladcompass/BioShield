@@ -67,7 +67,7 @@
 pip install bioshield
 
 # Install specific version
-pip install bioshield==1.1.0
+pip install bioshield==1.0.0
 
 # Upgrade to latest
 pip install --upgrade bioshield
