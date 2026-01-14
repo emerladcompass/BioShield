@@ -67,7 +67,7 @@
 pip install bioshield
 
 # Install specific version
-pip install bioshield==3.3.5
+pip install bioshield==1.1.0
 
 # Upgrade to latest
 pip install --upgrade bioshield
@@ -356,7 +356,7 @@ Primary Citation
   title        = {{BioShield-B: Agro-Systemic Immunity & Genetic Integrity Framework}},
   year         = {2026},
   publisher    = {Zenodo},
-  version      = {3.3.5},
+  version      = {1.0.0},
   doi          = {10.5281/zenodo.18224754},
   url          = {https://doi.org/10.5281/zenodo.18224754}
 }
@@ -510,7 +510,7 @@ Training & Workshops
 
 ---
 
-**BioShield-B Framework** • **Version 3.3.5** • **© 2026 Emerlad Compass Research**  
+**BioShield-B Framework** • **Version 1.0.0** • **© 2026 Emerlad Compass Research**  
 *"Intelligent Soil Monitoring for Sustainable Agriculture"*
 
 [![PyPI Version](https://img.shields.io/pypi/v/bioshield?style=for-the-badge)](https://pypi.org/project/bioshield/)
